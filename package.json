@@ -1,37 +1,37 @@
 {
   "name": "financial-faucet-fastener",
   "version": "1.0.0",
-  "description": "",
+  "description": "An application to help you manage your finances.",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "npm run build && node server.js",
-    "start:dev": "concurrently \"npm run server\" \"cd client && npm run start\"",
-    "server": "nodemon server.js --ignore client",
-    "build": "cd client && npm run build",
-    "install": "cd client && npm install",
-    "client": "cd client && npm start"
+    "start:dev": "concurrently \"npm run server\" \"cd public && npm run start\"",
+    "server": "nodemon server.js --ignore public",
+    "build": "cd public && npm run build",
+    "install": "cd public && npm install",
+    "public": "cd public && npm start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coding-boot-camp/unit18hw.git"
+    "url": "git+https://github.com/MikeyP957/financial-faucet-fastener.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coding-boot-camp/unit18hw/issues"
+    "url": "https://github.com/MikeyP957/financial-faucet-fastener/issues"
   },
-  "homepage": "https://github.com/coding-boot-camp/unit18hw#readme",
+  "homepage": "https://github.com/MikeyP957/financial-faucet-fastener#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  },
   "dependencies": {
     "compression": "^1.7.4",
+    "eslint": "^7.25.0",
     "express": "^4.17.1",
-    "lite-server": "^2.5.3",
-    "mongoose": "^5.5.15",
-    "morgan": "^1.9.1",
-    "if-env": "^1.0.4"
-  },
-  "devDependencies": {
-    "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4"
+    "lite-server": "^2.6.1",
+    "mongoose": "^5.12.5",
+    "morgan": "^1.10.0"
   }
 }
