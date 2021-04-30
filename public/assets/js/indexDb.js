@@ -26,7 +26,7 @@ request.onerror = function (evt) {
 function checkDatabase() {
     console.log('checkDatabase-----')
 
-    let transaction = db.transaction(['BudgetStore', 'readwrite']);
+    let transaction = db.transaction(['BudgetStore'], 'readwrite');
 
     const store = transaction.objectStore('BudgetStore')
 
