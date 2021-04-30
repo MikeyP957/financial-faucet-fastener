@@ -4,8 +4,8 @@ const FILES_TO_CACHE = [
     '/assets/styles.css',
     '/dist/app.bundle.js',
     '/dist/indexDb.bundle.js',
-    // "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
-    // "https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
+    "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
+    "https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
 ];
 
 const ASSETS_CACHE_NAME = 'assets-cache-v1';
