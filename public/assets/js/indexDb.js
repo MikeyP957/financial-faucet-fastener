@@ -6,6 +6,7 @@ const request = indexedDB.open('budgetDb', budgetVersion || 21);
 
 request.onupgradeneeded = function (evt) {
     console.log('upgrade needed in indexDb')
+    db = evt.target.result
 
     const { oldVersion } = evt;
     const newVersion= evt.newVersion || db.version;
@@ -63,7 +64,7 @@ function checkDatabase() {
 request.onsuccess = function (evt) {
     console.log('you did it');
     db = evt.target.result;
-
+    //check if app is connected to the server
     if (navigator.onLine) {
         console.log('Backend online!');
         checkDatabase();
@@ -73,7 +74,7 @@ request.onsuccess = function (evt) {
 const saveRecord = (record) => {
     console.log('save record invoked')
 
-    const transaction = db.transaction(['BudgetStore', 'readwrite'])
+    const transaction = db.transaction(['BudgetStore'], 'readwrite')
 
     const store = transaction.objectStore('BudgetStore');
 
